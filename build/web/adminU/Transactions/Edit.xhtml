@@ -1,0 +1,49 @@
+
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="TransactionsEditDlg" widgetVar="TransactionsEditDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.EditTransactionsTitle}">
+            <h:form id="TransactionsEditForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{TransactionsController.selected != null}">
+                        
+                        <p:outputLabel value="#{bundle.EditTransactionsLabel_transactID}" for="transactID" />
+                        <p:inputText id="transactID" value="#{TransactionsController.selected.transactID}" title="#{bundle.EditTransactionsTitle_transactID}" required="true" requiredMessage="#{bundle.EditTransactionsRequiredMessage_transactID}"/>
+
+                                
+                        <p:outputLabel value="#{bundle.EditTransactionsLabel_IDcategory}" for="IDcategory" />
+                        <p:inputText id="IDcategory" value="#{TransactionsController.selected.IDcategory}" title="#{bundle.EditTransactionsTitle_IDcategory}" required="true" requiredMessage="#{bundle.EditTransactionsRequiredMessage_IDcategory}"/>
+                        
+                        
+                        <p:outputLabel value="#{bundle.EditTransactionsLabel_val}" for="val" />
+                        <p:inputText id="val" value="#{TransactionsController.selected.val}" title="#{bundle.EditTransactionsTitle_val}" required="true" requiredMessage="#{bundle.EditTransactionsRequiredMessage_val}"/>
+                                           
+                        <p:outputLabel value="#{bundle.EditTransactionsLabel_userID}" for="userID" />
+                         <p:selectOneMenu id="userID" value="#{TransactionsController.selected.userID}" required="true" requiredMessage="#{bundle.EditTransactionsRequiredMessage_userID}">                        
+                             <f:selectItem itemLabel="#{bundle.SelectOneMessage}"/>
+                             <f:selectItems value="#{userController.itemsAvailableSelectOne}"
+                                            var="idUserItem"
+                                            itemValue="#{idUserItem}"/>
+                         </p:selectOneMenu>                    
+    
+
+                        
+                       
+
+
+                    </p:panelGrid>
+                    <p:commandButton actionListener="#{TransactionsController.update}" value="#{bundle.Save}" update="display,:TransactionsListForm:datalist,:growl" oncomplete="handleSubmit(args, 'TransactionsEditDialog');"/>
+                    <p:commandButton value="#{bundle.Cancel}" onclick="TransactionsEditDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

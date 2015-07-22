@@ -1,0 +1,36 @@
+
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="TransactionsViewDlg" widgetVar="TransactionsViewDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.ViewTransactionsTitle}">
+            <h:form id="TransactionsViewForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{TransactionsController.selected != null}">
+                        <h:outputText value="#{bundle.ViewTransactionsLabel_transactID}"/>
+                        <h:outputText value="#{TransactionsController.selected.transactID}" title="#{bundle.ViewTransactionsTitle_transactID}"/>
+
+                        <h:outputText value="#{bundle.ViewTransactionsLabel_IDcategory}"/>
+                        <h:outputText value="#{TransactionsController.selected.IDcategory}" title="#{bundle.ViewTransactionsTitle_IDcategory}"/>
+
+                        <h:outputText value="#{bundle.ViewTransactionsLabel_val}"/>
+                        <h:outputText value="#{TransactionsController.selected.val}" title="#{bundle.ViewTransactionsTitle_val}"/>
+                    
+                        <h:outputText value="#{bundle.ViewTransactionsLabel_userID}"/>
+                        <h:outputText value="#{TransactionsController.selected.userID}" title="#{bundle.ViewTransactionsTitle_userID}"/>
+
+
+                    </p:panelGrid>
+                    <p:commandButton value="#{bundle.Close}" onclick="TransactionsViewDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>

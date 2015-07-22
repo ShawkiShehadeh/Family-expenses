@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Scene Scope="Project" version="2">
+    <Scope Scope="Faces Configuration Only"/>
+    <Scope Scope="Project">
+        <Node id="UsersGroups/Create.xhtml" x="400" y="600" zoom="true"/>*
+        <Node id="Transactions/Edit.xhtml" x="1150" y="150" zoom="true"/>
+        <Node id="index.xhtml" x="150" y="150" zoom="true"/>
+        <Node id="welcomePrimefaces.xhtml" x="400" y="150" zoom="true"/>
+        <Node id="UsersGroups/List.xhtml" x="650" y="450" zoom="true"/>
+        <Node id="User/Create.xhtml" x="900" y="450" zoom="true"/>*
+        <Node id="Transactions/List.xhtml" x="150" y="900" zoom="true"/>
+        <Node id="Categories/View.xhtml" x="150" y="450" zoom="true"/>
+        
+        <Node id="Transaction/Create.xhtml" x="150" y="600" zoom="true"/>*
+        
+        <Node id="Transactions/Create.xhtml" x="650" y="300" zoom="true"/>*
+        <Node id="Transactions/View.xhtml" x="150" y="300" zoom="true"/>
+        <Node id="User/List.xhtml" x="400" y="750" zoom="true"/>
+        <Node id="Categories/Create.xhtml" x="1150" y="300" zoom="true"/>*
+        <Node id="Categories/List.xhtml" x="400" y="450" zoom="true"/>
+        <Node id="Categories/Edit.xhtml" x="1400" y="150" zoom="true"/>
+        <Node id="template.xhtml" x="650" y="150" zoom="true"/>
+        <Node id="User/View.xhtml" x="900" y="300" zoom="true"/>
+        <Node id="User/Edit.xhtml" x="150" y="750" zoom="true"/>
+        <Node id="UsersGroups/Edit.xhtml" x="650" y="600" zoom="true"/>
+        <Node id="UsersGroups/View.xhtml" x="1650" y="150" zoom="true"/>
+    </Scope>
+    <Scope Scope="All Faces Configurations"/>
+</Scene>

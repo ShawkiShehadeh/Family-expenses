@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="UsersGroupsEditDlg" widgetVar="UsersGroupsEditDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.EditUsersGroupsTitle}">
+            <h:form id="UsersGroupsEditForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{UsersGroupsController.selected != null}">
+                        
+                        <p:outputLabel value="#{bundle.EditUsersGroupsLabel_usersgroupspk_userID}" for="usersgroupspk_userID" />
+                        <p:inputText id="usersgroupspk_userID" value="#{UsersGroupsController.selected.usersgroupspk.userID}" title="#{bundle.EditUsersGroupsTitle_usersgroupspk_userID}" required="true" requiredMessage="#{bundle.EditUsersGroupsRequiredMessage_usersgroupspk_userID}"/>
+                                                
+                        
+                        <p:outputLabel value="#{bundle.EditUsersGroupsLabel_usersgroupspk_groupName}" for="usersgroupspk_groupName" />
+                        <p:inputText id="usersgroupspk_groupName" value="#{UsersGroupsController.selected.usersgroupspk.groupName}" title="#{bundle.EditUsersGroupsTitle_usersgroupspk_groupName}" required="true" requiredMessage="#{bundle.EditusersgroupsRequiredMessage_usersgroupspk_groupName}"/>
+                        
+                    </p:panelGrid>
+                    <p:commandButton actionListener="#{UsersGroupsController.update}" value="#{bundle.Save}" update="display,:UsersGroupsListForm:datalist,:growl" oncomplete="handleSubmit(args, 'UsersGroupsEditDialog');"/>
+                    <p:commandButton value="#{bundle.Cancel}" onclick="UsersGroupsEditDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>
